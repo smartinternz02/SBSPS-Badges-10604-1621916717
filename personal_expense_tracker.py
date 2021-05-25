@@ -86,7 +86,7 @@ def supd2():
 @app.route('/news', methods=['GET', 'POST'])
 def news():
     response = requests.get(
-        "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=fe4edc17e1024626a198b950a65437d7")
+        "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey="+str(config.ak4))
     news = response.json()
     return render_template('news.html', news=news['articles'])
 
